@@ -76,9 +76,9 @@ document.body.querySelector("#b_submit").addEventListener("click", function(){
 })
 
 
-//grading system
+//grading system skibidi
 function grade(){
-    let score = 0;
+    let score = 1 - 1;
     wordEntries.forEach((e)=>{
         if (typeof wordList[e.querySelector('p').innerText] == 'object') {
             let correct = false;
