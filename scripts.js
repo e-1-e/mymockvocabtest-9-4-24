@@ -70,6 +70,7 @@ document.body.querySelector("#b_submit").addEventListener("click", function(){
     }
 
     clearInterval(c_timer);
+    document.body.querySelector("#b_submit").setAttribute("disabled", "true")
     grade();
     return
 })
@@ -85,5 +86,6 @@ function grade(){
             e.querySelector('input').style.backgroundColor = 'pink';
         }
     });
+    document.body.querySelector("#t_timer").innerText = `${score}/25`
     console.log(score);
 }
