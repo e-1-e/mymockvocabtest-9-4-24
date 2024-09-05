@@ -1,30 +1,30 @@
 /* Place your JavaScript in this file */
 var wordList = {
-    'Homo': 'same',
-    'Spec' : 'look',
-    'Duct' : 'lead',
-    'Fer' : 'carry',
-    'Pend' : 'hang',
-    'Micro' : 'small',
-    'Hydro' : 'water',
-    'Photo' : 'light',
-    'Pan' : 'all',
-    'Penta' : 'five',
-    'Tele' : 'far',
-    'Vid' : 'look',
-    'Omni' : 'all',
-    'Ex' : 'out',
-    'Poly' : 'many',
-    'Re' : 'again',
-    'Hypo' : 'under',
-    'Pseudo' : 'false',
-    'Neuro' : 'nerve',
-    'Tomy' : 'cut',
-    'Hema' : 'blood',
-    'Proto' : 'first',
-    'Phon' : 'sound',
-    'Mono' : 'one',
-    'Viv' : 'life'
+    'Morph' : 'shape',
+    'Vest' : 'clothes',
+    'Bene' : 'good',
+    'Pond' : 'weight',
+    'Corp' : 'body',
+    'Dorm' : 'sleep',
+    'Pater' : 'father',
+    'Nov' : 'new',
+    'Punct' : 'point',
+    'Ject' : 'throw',
+    'Tion' : ['act', 'state'], //'tion' also means state, add something for this
+    'Loco' : 'place',
+    'Dox' : 'opinion',
+    'Amphi' : 'both',
+    'Magn' : 'great',
+    'Eu' : 'good',
+    'Endo' : 'within',
+    'Phobia' : 'fear',
+    'Ortho' : 'straight',
+    'Put' : 'think',
+    'Ver' : 'true',
+    'Matri' : 'mother',
+    'Mega' : 'large',
+    'Pop' : 'people',
+    'Sangui' : 'blood' 
 } 
 
 var wordEntries = [];
@@ -80,6 +80,21 @@ document.body.querySelector("#b_submit").addEventListener("click", function(){
 function grade(){
     let score = 0;
     wordEntries.forEach((e)=>{
+        if (typeof wordList[e.querySelector('p').innerText] == 'object') {
+            let correct = false;
+            for (i in wordList[e.querySelector('p').innerText]) {
+                if (e.querySelector('input'.value.toLowerCase() == wordList[e.querySelector('p').innerText][i])) {
+                    correct = true;
+                }
+            }
+            if (correct) {
+                score++;
+            } else {
+                e.querySelector('input').style.backgroundColor = 'pink';
+            }
+            return
+        }
+
         if (e.querySelector('input').value.toLowerCase() == wordList[e.querySelector('p').innerText]) {
             score++;
         } else {
