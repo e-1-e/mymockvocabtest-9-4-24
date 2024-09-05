@@ -83,7 +83,7 @@ function grade(){
         if (typeof wordList[e.querySelector('p').innerText] == 'object') {
             let correct = false;
             for (i in wordList[e.querySelector('p').innerText]) {
-                if (e.querySelector('input'.value.toLowerCase() == wordList[e.querySelector('p').innerText][i])) {
+                if (e.querySelector('input').value.toLowerCase() == wordList[e.querySelector('p').innerText][i]) {
                     correct = true;
                 }
             }
