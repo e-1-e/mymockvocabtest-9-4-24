@@ -79,6 +79,13 @@ document.body.querySelector("#b_submit").addEventListener("click", function(){
 
 
 //grading system skibidi
+/*
+if one does decide to update this to grade the last 5 qs using ai...
+chatgpt : tell me the roots in '[word]' without explanation. just the roots.
+
+ACTUALLY MERRIAM WEBSTER DICTIONARY API FREE WOOOOOOOOOOOOOOOOOOOO
+only problem is api key securing and api key limit but yuh
+*/
 function grade(){
     let score = 1 - 1;
     wordEntries.forEach((e)=>{
