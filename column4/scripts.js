@@ -83,6 +83,7 @@ function grade(){
     let score = 1 - 1;
     wordEntries.forEach((e)=>{
         e.querySelector('input').setAttribute('disabled', 'true');
+        e.querySelector('input').value = e.querySelector('input').value.trim();
 
         if (typeof wordList[e.querySelector('p').innerText] == 'object') {
             let correct = false;
