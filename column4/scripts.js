@@ -37,7 +37,7 @@ Object.keys(wordList).forEach((e)=>{
     var newEle = curCol.querySelector("#demo").cloneNode(true);
     newEle.id = '';
     newEle.removeAttribute('hidden');
-    newEle.disabled = true;
+    newEle.querySelector('input').disabled = true;
 
     newEle.querySelector('p').innerText = e;
 
