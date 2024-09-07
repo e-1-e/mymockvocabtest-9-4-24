@@ -96,6 +96,7 @@ function grade(){
             } else {
                 e.querySelector('input').style.backgroundColor = 'pink';
                 e.querySelector('input').style.color = 'green';
+                e.querySelector('input').style.fontWeight = '900';
                 e.querySelector('input').value = wordList[e.querySelector('p').innerText][0];
             }
             return
@@ -106,9 +107,11 @@ function grade(){
         } else {
             e.querySelector('input').style.backgroundColor = 'pink';
             e.querySelector('input').style.color = 'green';
+            e.querySelector('input').style.fontWeight = '900';
             e.querySelector('input').value = wordList[e.querySelector('p').innerText];
         }
     });
-    document.body.querySelector("#t_timer").innerText = `${score}/25`
-    document.body.querySelector("#b_submit").setAttribute("disabled", "true")
+    document.body.querySelector("#t_timer").innerText = `${score}/25`;
+    document.body.querySelector("#b_submit").setAttribute("disabled", "true");
+    document.body.querySelector("#b_submit").innerText = 'REFRESH TO RETAKE';
 }
