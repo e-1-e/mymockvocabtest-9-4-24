@@ -2,7 +2,7 @@
 var wordList = {
     'Atmo' : 'vapor',
     'Cardio' : 'heart',
-    'Cosmo' : ['world', 'universe'],
+    'Cosmo' : ['world', 'universe', 'world or universe'],
     'Counter' : 'against',
     'Cranio' : 'skull',
     'Cyclo' : 'circle',

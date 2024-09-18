@@ -1,6 +1,6 @@
 /* Place your JavaScript in this file */
 var wordList = {
-    'Germ': ['vital', 'related'],
+    'Germ': ['vital', 'related', 'vital or related'],
     'Greg' : 'group',
     'Mar' : 'sea',
     'Prim' : 'first',

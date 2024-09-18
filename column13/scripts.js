@@ -16,7 +16,7 @@ var wordList = {
     'Labor' : 'work',
     'Myo' : 'muscle',
     'Vacc' : 'empty',
-    'Oligo' : ['few', 'small'],
+    'Oligo' : ['few', 'small', 'few or small'],
     'Ose' : 'sugar',
     'Osis' : 'condition',
     'Tude' : 'state of',

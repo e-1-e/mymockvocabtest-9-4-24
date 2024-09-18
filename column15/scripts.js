@@ -16,7 +16,7 @@ var wordList = {
     'Dactyl' : 'finger',
     'Phos' : 'light',
     'Gon' : 'angle',
-    'Lite' : ['mineral', 'fossil'],
+    'Lite' : ['mineral', 'fossil', 'mineral or fossil', 'mineral/fossil'],
     'Vore' : 'eating',
     'Holo' : 'whole',
     'Haplo' : 'single',

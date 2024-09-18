@@ -10,7 +10,7 @@ var wordList = {
     'Nov' : 'new',
     'Punct' : 'point',
     'Ject' : 'throw',
-    'Tion' : ['act', 'state'], //'tion' also means state, add something for this
+    'Tion' : ['act', 'state', 'act or state'], //'tion' also means state, add something for this
     'Loco' : 'place',
     'Dox' : 'opinion',
     'Amphi' : 'both',

@@ -22,7 +22,7 @@ var wordList = {
     'Hist' : 'tissue',
     'Glott' : 'tongue',
     'Phan' : 'appearance',
-    'Peri' : ['near', 'around'],
+    'Peri' : ['near', 'around', 'near or around'],
     'Pot' : 'drink',
     'Via' : 'road'
 } 
