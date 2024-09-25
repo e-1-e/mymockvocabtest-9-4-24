@@ -1,4 +1,13 @@
 /* Place your JavaScript in this file */
+
+/*
+special qs
+
+pandemic spreads to everyone, true or false
+
+posthumous gift is given before, true or false
+*/
+
 var wordList = {
     'Morph' : 'shape',
     'Vest' : 'clothes',
