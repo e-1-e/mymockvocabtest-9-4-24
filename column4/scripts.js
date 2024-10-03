@@ -60,10 +60,10 @@ Object.keys(wordList).forEach((e)=>{
 let positionsTaken = [];
 
 while (count < Object.keys(wordList).length) {
-    let newPosition = Math.ceil(Math.random() * 24);;
+    let newPosition = Math.ceil(Math.random() * 24);
     
     while (positionsTaken.indexOf(newPosition) != -1) {
-        newPosition = Math.ceil(Math.random() * 24);
+        newPosition = Math.ceil(Math.random() * 25) - 1;
     }
     console.log(newPosition);
     positionsTaken.push(newPosition);
