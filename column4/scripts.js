@@ -19,7 +19,7 @@ var wordList = {
     'Nov' : 'new',
     'Punct' : 'point',
     'Ject' : 'throw',
-    'Tion' : ['act', 'state', 'act or state'], //'tion' also means state, add something for this
+    'Tion' : ['act or state', 'act', 'state'], //'tion' also means state, add something for this
     'Loco' : 'place',
     'Dox' : 'opinion',
     'Amphi' : 'both',
@@ -40,6 +40,7 @@ var wordEntries = [];
 
 //set up HTML
 let count = 0;
+/*
 Object.keys(wordList).forEach((e)=>{
     var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
     console.log(curCol);
@@ -54,6 +55,35 @@ Object.keys(wordList).forEach((e)=>{
     wordEntries.push(newEle);
     count++;
 });
+*/
+
+let positionsTaken = [];
+
+while (count < Object.keys(wordList).length) {
+    let newPosition = 0;
+    
+    while (positionsTaken.find(newPosition)) {
+        newPosition = Math.ceil(Math.random * 25);
+    }
+
+    positionsTaken.push(newPosition);
+
+    let e = wordList[Object.keys(wordList)[newPosition]]
+
+    var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
+    console.log(curCol);
+    var newEle = curCol.querySelector("#demo").cloneNode(true);
+    newEle.id = '';
+    newEle.removeAttribute('hidden');
+    newEle.querySelector('input').disabled = true;
+
+    newEle.querySelector('p').innerText = e;
+
+    curCol.append(newEle);
+    wordEntries.push(newEle);
+    count++;
+    
+}
 
 //timers and triggers
 var simpleTimer = 180;
@@ -114,7 +144,7 @@ function grade(){
                 e.querySelector('input').style.backgroundColor = 'pink';
                 e.querySelector('input').style.color = 'green';
                 e.querySelector('input').style.fontWeight = '900';
-                e.querySelector('input').value = wordList[e.querySelector('p').innerText][0];
+                e.querySelector('input').value += ` (${wordList[e.querySelector('p').innerText][0]})`;
             }
             return
         }
@@ -125,7 +155,7 @@ function grade(){
             e.querySelector('input').style.backgroundColor = 'pink';
             e.querySelector('input').style.color = 'green';
             e.querySelector('input').style.fontWeight = '900';
-            e.querySelector('input').value = wordList[e.querySelector('p').innerText];
+            e.querySelector('input').value += ` (${wordList[e.querySelector('p').innerText]})`;
         }
     });
     document.body.querySelector("#t_timer").innerText = `${score}/25`;
