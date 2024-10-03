@@ -63,7 +63,7 @@ while (count < Object.keys(wordList).length) {
     let newPosition = 0;
     
     while (positionsTaken.indexOf(newPosition) != -1) {
-        newPosition = Math.ceil(Math.random * 25);
+        newPosition = Math.ceil(Math.random() * 25);
     }
 
     positionsTaken.push(newPosition);
