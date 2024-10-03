@@ -68,7 +68,7 @@ while (count < Object.keys(wordList).length) {
 
     positionsTaken.push(newPosition);
 
-    let e = wordList[Object.keys(wordList)[newPosition]]
+    let e = Object.keys(wordList)[newPosition]
 
     var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
     console.log(curCol);
