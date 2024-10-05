@@ -8,6 +8,11 @@ pandemic spreads to everyone, true or false
 posthumous gift is given before, true or false
 */
 
+var specialAnswers = {
+    'p_word2': true,
+    'p_word4': false
+}
+
 var wordList = {
     'Morph' : 'shape',
     'Vest' : 'clothes',
@@ -40,22 +45,6 @@ var wordEntries = [];
 
 //set up HTML
 let count = 0;
-/*
-Object.keys(wordList).forEach((e)=>{
-    var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
-    console.log(curCol);
-    var newEle = curCol.querySelector("#demo").cloneNode(true);
-    newEle.id = '';
-    newEle.removeAttribute('hidden');
-    newEle.querySelector('input').disabled = true;
-
-    newEle.querySelector('p').innerText = e;
-
-    curCol.append(newEle);
-    wordEntries.push(newEle);
-    count++;
-});
-*/
 
 let positionsTaken = [];
 
@@ -158,6 +147,18 @@ function grade(){
             e.querySelector('input').value += ` (${wordList[e.querySelector('p').innerText]})`;
         }
     });
+
+    Object.keys(specialAnswers).forEach((e)=>{
+        document.getElementById(e).getElementById('answertrue').disabled = true;
+        document.getElementById(e).getElementById('answerfalse').disabled = true;
+        if (document.getElementById(e).getElementById('answer' + specialAnswers[e]).value == true) {
+            score++;
+        } else {
+            document.getElementById(e).style.backgroundColor = 'pink';
+        }
+    })
+
+
     document.body.querySelector("#t_timer").innerText = `${score}/25`;
     document.body.querySelector("#b_submit").setAttribute("disabled", "true");
     document.body.querySelector("#b_submit").innerText = 'REFRESH TO RETAKE';
