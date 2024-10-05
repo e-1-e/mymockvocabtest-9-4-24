@@ -149,9 +149,9 @@ function grade(){
     });
 
     Object.keys(specialAnswers).forEach((e)=>{
-        document.getElementById(e).getElementById('answertrue').disabled = true;
-        document.getElementById(e).getElementById('answerfalse').disabled = true;
-        if (document.getElementById(e).getElementById('answer' + specialAnswers[e]).value == true) {
+        document.getElementById(e).querySelector('#answertrue').disabled = true;
+        document.getElementById(e).querySelector('#answerfalse').disabled = true;
+        if (document.getElementById(e).querySelector('#answer' + specialAnswers[e]).value == true) {
             score++;
         } else {
             document.getElementById(e).style.backgroundColor = 'pink';
