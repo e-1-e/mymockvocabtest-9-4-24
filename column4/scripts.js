@@ -151,7 +151,7 @@ function grade(){
     Object.keys(specialAnswers).forEach((e)=>{
         document.getElementById(e).querySelector('#answertrue').disabled = true;
         document.getElementById(e).querySelector('#answerfalse').disabled = true;
-        if (document.getElementById(e).querySelector('#answer' + specialAnswers[e]).value == 'on') {
+        if (document.getElementById(e).querySelector('#answer' + specialAnswers[e]).checked == true) {
             score++;
         } else {
             document.getElementById(e).style.backgroundColor = 'pink';
@@ -159,7 +159,7 @@ function grade(){
     })
 
 
-    document.body.querySelector("#t_timer").innerText = `${score}/25`;
+    document.body.querySelector("#t_timer").innerText = `${score}/27`;
     document.body.querySelector("#b_submit").setAttribute("disabled", "true");
     document.body.querySelector("#b_submit").innerText = 'REFRESH TO RETAKE';
 }
