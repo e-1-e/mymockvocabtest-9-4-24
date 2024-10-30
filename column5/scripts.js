@@ -1,4 +1,16 @@
 /* Place your JavaScript in this file */
+
+/*
+decade = 100
+
+democracy = king
+*/
+
+var specialAnswers = {
+    'p_word2': false,
+    'p_word4': false
+}
+
 var wordList = {
     'Vita':'life',
     'Demo' : 'people',
@@ -31,7 +43,20 @@ var wordEntries = [];
 
 //set up HTML
 let count = 0;
-Object.keys(wordList).forEach((e)=>{
+
+let positionsTaken = [];
+
+while (count < Object.keys(wordList).length) {
+    let newPosition = Math.ceil(Math.random() * 24);
+    
+    while (positionsTaken.indexOf(newPosition) != -1) {
+        newPosition = Math.ceil(Math.random() * 25) - 1;
+    }
+    console.log(newPosition);
+    positionsTaken.push(newPosition);
+
+    let e = Object.keys(wordList)[newPosition]
+
     var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
     console.log(curCol);
     var newEle = curCol.querySelector("#demo").cloneNode(true);
@@ -44,7 +69,8 @@ Object.keys(wordList).forEach((e)=>{
     curCol.append(newEle);
     wordEntries.push(newEle);
     count++;
-});
+    
+}
 
 //timers and triggers
 var simpleTimer = 180;
@@ -105,7 +131,7 @@ function grade(){
                 e.querySelector('input').style.backgroundColor = 'pink';
                 e.querySelector('input').style.color = 'green';
                 e.querySelector('input').style.fontWeight = '900';
-                e.querySelector('input').value = wordList[e.querySelector('p').innerText][0];
+                e.querySelector('input').value += ` (${wordList[e.querySelector('p').innerText][0]})`;
             }
             return
         }
@@ -116,10 +142,22 @@ function grade(){
             e.querySelector('input').style.backgroundColor = 'pink';
             e.querySelector('input').style.color = 'green';
             e.querySelector('input').style.fontWeight = '900';
-            e.querySelector('input').value = wordList[e.querySelector('p').innerText];
+            e.querySelector('input').value += ` (${wordList[e.querySelector('p').innerText]})`;
         }
     });
-    document.body.querySelector("#t_timer").innerText = `${score}/25`;
+
+    Object.keys(specialAnswers).forEach((e)=>{
+        document.getElementById(e).querySelector('#answertrue').disabled = true;
+        document.getElementById(e).querySelector('#answerfalse').disabled = true;
+        if (document.getElementById(e).querySelector('#answer' + specialAnswers[e]).checked == true) {
+            score++;
+        } else {
+            document.getElementById(e).style.backgroundColor = 'pink';
+        }
+    })
+
+
+    document.body.querySelector("#t_timer").innerText = `${score}/27`;
     document.body.querySelector("#b_submit").setAttribute("disabled", "true");
     document.body.querySelector("#b_submit").innerText = 'REFRESH TO RETAKE';
 }
