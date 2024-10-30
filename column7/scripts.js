@@ -31,7 +31,19 @@ var wordEntries = [];
 
 //set up HTML
 let count = 0;
-Object.keys(wordList).forEach((e)=>{
+let positionsTaken = [];
+
+while (count < Object.keys(wordList).length) {
+    let newPosition = Math.ceil(Math.random() * 24);
+    
+    while (positionsTaken.indexOf(newPosition) != -1) {
+        newPosition = Math.ceil(Math.random() * 25) - 1;
+    }
+    console.log(newPosition);
+    positionsTaken.push(newPosition);
+
+    let e = Object.keys(wordList)[newPosition]
+
     var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
     console.log(curCol);
     var newEle = curCol.querySelector("#demo").cloneNode(true);
@@ -44,7 +56,8 @@ Object.keys(wordList).forEach((e)=>{
     curCol.append(newEle);
     wordEntries.push(newEle);
     count++;
-});
+    
+}
 
 //timers and triggers
 var simpleTimer = 180;

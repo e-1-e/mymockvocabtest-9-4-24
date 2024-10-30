@@ -58,7 +58,6 @@ while (count < Object.keys(wordList).length) {
     count++;
     
 }
-
 //timers and triggers
 var simpleTimer = 180;
 var c_timer;
