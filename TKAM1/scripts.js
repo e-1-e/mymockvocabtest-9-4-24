@@ -7,31 +7,16 @@ multiple choice exam since free response won't work
 */
 
 var wordList = {
-    'Germ': ['vital', 'related', 'vital or related'],
-    'Greg' : 'group',
-    'Mar' : 'sea',
-    'Prim' : 'first',
-    'Pyro' : 'fire',
-    'Clam' : 'cry out',
-    'Plu' : 'more',
-    'Tang' : 'touch',
-    'String' : 'bind',
-    'Liber' : 'free',
-    'Junct' : 'join',
-    'Clud' : 'close',
-    'Se' : 'apart',
-    'Trib' : 'pay',
-    'Dign' : 'worthy',
-    'Luc' : 'light',
-    'Rupt' : 'break',
-    'Grat' : 'pleasing',
-    'Medi' : 'middle',
-    'Soph' : 'wisdom',
-    'Curr' : 'run',
-    'Tempor' : 'time',
-    'Migr' : 'wander',
-    'Trans' : 'across',
-    'Gamy' : 'marriage'
+    'assuage' : ['make (an unpleasant feeling) less intense)', 'make less intense'],
+    'seldom' : ['not often\; rarely', 'not often', 'rarely'],
+    'enable' : 'to give someone or something the authority or means to do something',
+    'revelation' : 'a surprising and previously unknown fact, especially one that is made known in a dramatic way',
+    'habitually' : 'by way of habit; customarily',
+    'contentment' : 'a state of happiness and satisfaction',
+    'teemed' : 'be full of or swarming with',
+    'repertoire' : 'a stock of skills or types of behavior that a person habitually uses',
+    'vapid' : 'offering nothing that is stimulating or challenging',
+    'malevolent' : 'having or showing a wish to do evil to others'
 } 
 
 var wordEntries = [];
@@ -67,7 +52,7 @@ while (count < Object.keys(wordList).length) {
 }
 
 //timers and triggers
-var simpleTimer = 180;
+var simpleTimer = 999999999;
 var c_timer;
 
 document.body.querySelector("#b_start").addEventListener('click', function(){
@@ -139,7 +124,7 @@ function grade(){
             e.querySelector('input').value = wordList[e.querySelector('p').innerText];
         }
     });
-    document.body.querySelector("#t_timer").innerText = `${score}/25`;
+    document.body.querySelector("#t_timer").innerText = `${score}/10`;
     document.body.querySelector("#b_submit").setAttribute("disabled", "true");
     document.body.querySelector("#b_submit").innerText = 'REFRESH TO RETAKE';
 }
