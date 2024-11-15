@@ -26,10 +26,10 @@ let count = 0;
 let positionsTaken = [];
 
 while (count < Object.keys(wordList).length) {
-    let newPosition = Math.ceil(Math.random() * 24);
+    let newPosition = Math.ceil(Math.random() * Object.keys(wordList).length - 1);
     
     while (positionsTaken.indexOf(newPosition) != -1) {
-        newPosition = Math.ceil(Math.random() * 25) - 1;
+        newPosition = Math.ceil(Math.random() * Object.keys(wordList).length) - 1;
     }
     console.log(newPosition);
     positionsTaken.push(newPosition);
