@@ -58,26 +58,10 @@ var c_timer;
 document.body.querySelector("#b_start").addEventListener('click', function(){
     wordEntries.forEach((e)=>{e.querySelector('input').disabled = false;})
 
-    c_timer = setInterval(()=>{
-        if (simpleTimer == 0) {
-            clearInterval(c_timer);
-            grade();
-            return;
-        }
-
-        simpleTimer--;
-        document.body.querySelector("#t_timer").innerText = `${Math.floor(simpleTimer/60)}:${(simpleTimer%60).toString().padStart(2, '0')}`;
-    }, 1000)
-
     document.body.removeChild(document.body.querySelector("#b_start"));
 });
 
 document.body.querySelector("#b_submit").addEventListener("click", function(){
-    if (simpleTimer == 180) {
-        return;
-    }
-
-    clearInterval(c_timer);
     grade();
     return
 })
