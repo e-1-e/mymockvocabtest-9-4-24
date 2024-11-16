@@ -223,7 +223,7 @@ function grade() {
         document.getElementById("p_word" + ixe).disabled = true;
         if (document.getElementById("p_word" + ixe).value == sentenceList[document.getElementById("p_word" + ixe).placeholder]) {
             score++;
-            document.getElementById("p_word" + ixe).backgroundColor = 'green';
+            document.getElementById("p_word" + ixe).style.backgroundColor = '#c1f7d6';
         }
     }
 
