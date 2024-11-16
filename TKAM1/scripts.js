@@ -120,6 +120,7 @@ function lineManager(newEle) {
         [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
         [newEle.getBoundingClientRect().left, (newEle.getBoundingClientRect().top + newEle.getBoundingClientRect().bottom)/2]
     );
+    ele1 = undefined;
 }
 
 // line function
