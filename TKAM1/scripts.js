@@ -123,8 +123,16 @@ function lineManager(newEle) {
         ele1.currentLine123.remove();
     }
 
+    if (ele1.connectedTo123) {
+        ele1.connectedTo123.connectedTo123 = undefined;
+    }
+
     if (newEle.currentLine123) {
         newEle.currentLine123.remove();
+    }
+
+    if (newEle.connectedTo123) {
+        newEle.connectedTo123.connectedTo123 = undefined;
     }
 
     ele1.currentLine123 = newEle.currentLine123 = makeLine(
@@ -199,13 +207,19 @@ function grade() {
     let score = 0;
 
     wordEntries.forEach((v, i) => {
+        if (!v.connectedTo123) {
+            return;
+        }
+
         if (wordList[v.querySelector('button').innerText] == v.connectedTo123.querySelector('button').innerText) {
             console.log(`${wordList[v.querySelector('button').innerText]} == ${v.connectedTo123.querySelector('button').innerText}`);
+            v.querySelector('button').style.backgroundColor = '#c1f7d6';
+            v.connectedTo123.querySelector('button').style.backgroundColor = '#c1f7d6';
             score++;
         }
     });
 
-    
+
 
 
     document.body.querySelector("#t_timer").innerText = `${score}/15`;
