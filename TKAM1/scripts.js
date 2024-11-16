@@ -89,9 +89,9 @@ while (count < Object.keys(wordList).length) {
 
 let sentencesTaken = [];
 for (let i = 1; i < 6; i++) {
-    let newPos = Math.floor(Math.random() * 10) + 1;
+    let newPos = Math.floor(Math.random() * 10);
     while (sentencesTaken.indexOf(newPos) != -1) {
-        newPos = Math.floor(Math.random() * 10) + 1;
+        newPos = Math.floor(Math.random() * 10);
     }
     sentencesTaken.push(newPos);
 
