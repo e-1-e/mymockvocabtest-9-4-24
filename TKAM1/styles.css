@@ -29,11 +29,11 @@ html, body {
 }
 
 button:hover {
-    background-color: darkgrey;
+    background-color: whitesmoke!important;
 }
 
 button:active {
-    background-color: grey;
+    background-color: darkgrey!important;
 }
 
 /*style="width: 80%; height: 8%; margin:2% 10% 0; background-color: #444444"*/
