@@ -39,6 +39,7 @@ while (count < Object.keys(wordList).length) {
 
     console.log(newPosition);
     positionsTaken.push(newPosition);
+    positionsTaken2.push(newPosition2);
 
     let e = Object.keys(wordList)[newPosition]
     let f = Object.values(wordList)[newPosition2];
