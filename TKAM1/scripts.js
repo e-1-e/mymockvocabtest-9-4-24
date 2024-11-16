@@ -221,7 +221,7 @@ function grade() {
 
     for (let ixe = 1; ixe < 6; ixe++) {
         document.getElementById("p_word" + ixe).disabled = true;
-        if (document.getElementById("p_word" + ixe).value == sentenceList[document.getElementById("p_word" + ixe).placeholder]) {
+        if (document.getElementById("p_word" + ixe).value.trim().toLowerCase() == sentenceList[document.getElementById("p_word" + ixe).placeholder].trim().toLowerCase()) {
             score++;
             document.getElementById("p_word" + ixe).style.backgroundColor = '#c1f7d6';
         }
