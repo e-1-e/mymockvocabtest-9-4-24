@@ -27,7 +27,7 @@ var sentenceList = {
     'She was (___) late for work, and was therefore fired.' : 'habitually',
     'He found (___) in a living a simple life in the country.' : 'contentment',
     'The garden (___) with wildlife.' : 'teemed',
-    'The musician had a full concert repertoire listed on his resumé.' : 'repertoire',
+    'The musician had a full concert (___) listed on his resumé.' : 'repertoire',
     'Many students found Mrs. Crossen\'s English class rather (___) in comparison to their Accelerated Bio Class.' : 'vapid',
     'The students saw the glint of Mrs. Crossen’s dark, (___) eyes as she passed out the vocabulary sheet.' : 'malevolent'
 }
@@ -114,7 +114,7 @@ function lineManager(newEle) {
     }
     ele1.querySelector('button').style.borderStyle = 'solid';
     if (ele1.currentLine123) {
-        document.body.remove(ele1.currentLine123);
+        ele1.currentLine123.remove();
     }
     ele1.currentLine123 = makeLine(
         [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
