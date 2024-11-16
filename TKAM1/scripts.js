@@ -62,12 +62,15 @@ while (count < Object.keys(wordList).length) {
     newEle.removeAttribute('hidden');
 
     newEle.currentLine123 = undefined;
+    newEle.connectedTo123 = undefined;
 
     newEle.querySelector('button').innerText = e;
 
     newEle.querySelector('button').addEventListener("click", (e)=>{
-        console.log(newEle);
-        lineManager(newEle);
+        if (game) {
+            console.log(newEle);
+            lineManager(newEle);
+        }
     })
 
     document.getElementById('m_col1').append(newEle);
@@ -77,6 +80,9 @@ while (count < Object.keys(wordList).length) {
     newEle2.removeAttribute('hidden');
 
     newEle2.querySelector('button').innerText = f;
+
+    newEle2.currentLine123 = undefined;
+    newEle2.connectedTo123 = undefined;
 
     newEle2.addEventListener("click", (e)=>{
         lineManager(newEle2);
@@ -116,10 +122,19 @@ function lineManager(newEle) {
     if (ele1.currentLine123) {
         ele1.currentLine123.remove();
     }
-    ele1.currentLine123 = makeLine(
+
+    if (newEle.currentLine123) {
+        newEle.currentLine123.remove();
+    }
+
+    ele1.currentLine123 = newEle.currentLine123 = makeLine(
         [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
         [newEle.getBoundingClientRect().left, (newEle.getBoundingClientRect().top + newEle.getBoundingClientRect().bottom)/2]
     );
+
+    ele1.connectedTo123 = newEle;
+    newEle.connectedTo123 = ele1;
+
     ele1 = undefined;
 }
 
@@ -143,4 +158,57 @@ function makeLine(coordinate1, coordinate2) {
     nx.style.marginLeft = `-${nx.style.width.substr(0, nx.style.width.length - 3)/2}px`;
 
     return nx;
+}
+
+//timers and triggers
+var simpleTimer = 180;
+var c_timer;
+var game = false;
+
+document.body.querySelector("#b_start").addEventListener('click', function(){
+    game = true;
+
+    c_timer = setInterval(()=>{
+        if (simpleTimer == 0) {
+            clearInterval(c_timer);
+            grade();
+            return;
+        }
+
+        simpleTimer--;
+        document.body.querySelector("#t_timer").innerText = `${Math.floor(simpleTimer/60)}:${(simpleTimer%60).toString().padStart(2, '0')}`;
+    }, 1000)
+
+    document.body.removeChild(document.body.querySelector("#b_start"));
+});
+
+document.body.querySelector("#b_submit").addEventListener("click", function(){
+    if (simpleTimer == 180) {
+        return;
+    }
+
+    clearInterval(c_timer);
+    grade();
+    return
+})
+
+
+// grade
+function grade() {
+    game = false;
+    let score = 0;
+
+    wordEntries.forEach((v, i) => {
+        if (wordList[v.querySelector('button').innerText] == v.connectedTo123.querySelector('button').innerText) {
+            console.log(`${wordList[v.querySelector('button').innerText]} == ${v.connectedTo123.querySelector('button').innerText}`);
+            score++;
+        }
+    });
+
+    
+
+
+    document.body.querySelector("#t_timer").innerText = `${score}/15`;
+    document.body.querySelector("#b_submit").setAttribute("disabled", "true");
+    document.body.querySelector("#b_submit").innerText = 'REFRESH TO RETAKE';
 }
