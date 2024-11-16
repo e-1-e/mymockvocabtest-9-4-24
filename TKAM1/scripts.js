@@ -219,7 +219,13 @@ function grade() {
         }
     });
 
-
+    for (let ixe = 1; ixe < 6; ixe++) {
+        document.getElementById("p_word" + ixe).disabled = true;
+        if (document.getElementById("p_word" + ixe).value == sentenceList[document.getElementById("p_word" + ixe).placeholder]) {
+            score++;
+            document.getElementById("p_word" + ixe).backgroundColor = 'green';
+        }
+    }
 
 
     document.body.querySelector("#t_timer").innerText = `${score}/15`;
