@@ -57,7 +57,7 @@ while (count < Object.keys(wordList).length) {
 
     newEle2.querySelector('button').innerText = f;
 
-    document.getElementById('m_col1').append(newEle2);
+    document.getElementById('m_col2').append(newEle2);
 
     wordEntries.push(newEle);
     count++;
