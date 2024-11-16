@@ -50,7 +50,8 @@ while (count < Object.keys(wordList).length) {
 
     newEle.querySelector('button').innerText = e;
 
-    newEle.addEventListener("click", (e)=>{
+    newEle.querySelector('button').addEventListener("click", (e)=>{
+        console.log(newEle);
         lineManager(newEle);
     })
 
