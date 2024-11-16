@@ -50,6 +50,10 @@ while (count < Object.keys(wordList).length) {
 
     newEle.querySelector('button').innerText = e;
 
+    newEle.addEventListener("click", (e)=>{
+        lineManager(newEle);
+    })
+
     document.getElementById('m_col1').append(newEle);
 
     var newEle2 = document.getElementById('m_col2').querySelector("#demo").cloneNode(true);
@@ -58,6 +62,10 @@ while (count < Object.keys(wordList).length) {
 
     newEle2.querySelector('button').innerText = f;
 
+    newEle2.addEventListener("click", (e)=>{
+        lineManager(newEle2);
+    })
+
     document.getElementById('m_col2').append(newEle2);
 
     wordEntries.push(newEle);
@@ -65,3 +73,42 @@ while (count < Object.keys(wordList).length) {
     
 }
 
+// selection manager bc too lazy and bc organization haha
+let ele1 = undefined;
+
+// line manager
+//      newEle: element (the answer choices in matching game)
+function lineManager(newEle) {
+    if (!ele1) {
+        newEle = ele1;
+        ele1.querySelector('button').style.borderStyle = 'dotted';
+        return;
+    }
+    ele1.querySelector('button').style.borderStyle = 'solid';
+    makeLine(
+        [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
+        [newEle.getBoundingClientRect().left, (newEle.getBoundingClientRect().top + newEle.getBoundingClientRect().bottom)/2]
+    );
+}
+
+// line function
+//      coordinate1: [x, y]
+//      coordinate2: [x, y]
+function makeLine(coordinate1, coordinate2) {
+    let nx = document.createElement('div');
+    nx.style.backgroundColor = 'black';
+    nx.style.height = '5px';
+    nx.style.width = `${Math.hypot((coordinate2[0]-coordinate1[0]), (coordinate2[1]-coordinate1[1]))}px`;
+    //nx.style.width = '5px';
+    
+    nx.style.marginTop = `-${nx.style.height/2}px`;
+    nx.style.position = 'absolute';
+    nx.style.rotate = `${Math.atan((coordinate2[1] - coordinate1[1])/(coordinate2[0]-coordinate1[0]))}rad`;
+    nx.style.top = `${(coordinate2[1]+coordinate1[1])/2}px`;
+    nx.style.left = `${(coordinate2[0]+coordinate1[0])/2}px`;
+    
+    document.body.append(nx);
+    nx.style.marginLeft = `-${nx.style.width.substr(0, nx.style.width.length - 3)/2}px`;
+
+    return nx;
+}
