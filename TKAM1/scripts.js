@@ -42,7 +42,7 @@ while (count < Object.keys(wordList).length) {
     newEle.id = '';
     newEle.removeAttribute('hidden');
 
-    newEle.querySelector('p').innerText = e;
+    newEle.querySelector('button').innerText = e;
 
     curCol.append(newEle);
     wordEntries.push(newEle);
