@@ -44,7 +44,7 @@ while (count < Object.keys(wordList).length) {
     let e = Object.keys(wordList)[newPosition]
     let f = Object.values(wordList)[newPosition2];
 
-    var newEle = document.getElementById('m_col1').querySelector("#demo").cloneNode(true);
+    let newEle = document.getElementById('m_col1').querySelector("#demo").cloneNode(true);
     newEle.id = '';
     newEle.removeAttribute('hidden');
 
@@ -57,7 +57,7 @@ while (count < Object.keys(wordList).length) {
 
     document.getElementById('m_col1').append(newEle);
 
-    var newEle2 = document.getElementById('m_col2').querySelector("#demo").cloneNode(true);
+    let newEle2 = document.getElementById('m_col2').querySelector("#demo").cloneNode(true);
     newEle2.id = '';
     newEle2.removeAttribute('hidden');
 
