@@ -74,7 +74,7 @@ while (count < Object.keys(wordList).length) {
 }
 
 // selection manager bc too lazy and bc organization haha
-let ele1 = undefined;
+var ele1 = undefined;
 
 // line manager
 //      newEle: element (the answer choices in matching game)
@@ -82,6 +82,7 @@ function lineManager(newEle) {
     if (!ele1) {
         ele1 = newEle;
         ele1.querySelector('button').style.borderStyle = 'dotted';
+        console.log(ele1);
         return;
     }
     ele1.querySelector('button').style.borderStyle = 'solid';
@@ -89,6 +90,8 @@ function lineManager(newEle) {
         [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
         [newEle.getBoundingClientRect().left, (newEle.getBoundingClientRect().top + newEle.getBoundingClientRect().bottom)/2]
     );
+
+    ele1 = undefined;
 }
 
 // line function
