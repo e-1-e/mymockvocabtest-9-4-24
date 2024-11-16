@@ -80,7 +80,7 @@ let ele1 = undefined;
 //      newEle: element (the answer choices in matching game)
 function lineManager(newEle) {
     if (!ele1) {
-        newEle = ele1;
+        ele1 = newEle;
         ele1.querySelector('button').style.borderStyle = 'dotted';
         return;
     }
