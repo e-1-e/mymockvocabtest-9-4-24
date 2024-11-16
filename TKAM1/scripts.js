@@ -104,6 +104,32 @@ for (let i = 1; i < 6; i++) {
     sentencesTaken.push(newPos);
 
     document.getElementById("p_word" + i).placeholder = Object.keys(sentenceList)[newPos];
+		document.getElementById("p_word" + i).hint123 = document.createElement('div');
+		document.getElementById("p_word" + i).hint123.style.height = "20%";
+		document.getElementById("p_word" + i).hint123.style.width = "100%";
+		document.getElementById("p_word" + i).hint123.style.backgroundColor = "#ccccccaa";
+		document.getElementById("p_word" + i).hint123.style.position = "sticky";
+		document.getElementById("p_word" + i).hint123.style.zIndex = 9;
+		document.getElementById("p_word" + i).hint123.style.display = 'flex';
+		document.getElementById("p_word" + i).hint123.style.alignItems = 'center';
+		document.getElementById("p_word" + i).hint123.style.flexWrap = true;
+		document.getElementById("p_word" + i).hint123.setAttribute('hidden', true); //https://meowni.ca/hidden.is.a.lie.html
+		
+		document.getElementById("p_word" + i).hint123.toolt123 = document.createElement("h1");
+		document.getElementById("p_word" + i).hint123.toolt123.innerText = document.getElementById("p_word" + i).placeholder;
+		document.getElementById("p_word" + i).hint123.toolt123.style.margin = 0;
+		document.getElementById("p_word" + i).hint123.toolt123.style.padding = 'auto';
+		
+		document.getElementById("p_word" + i).hint123.append(document.getElementById("p_word" + i).hint123.toolt123);
+		document.body.append(document.getElementById("p_word" + i).hint123);
+		
+		document.getElementById("p_word" + i).addEventListener("focusin", (e) => {
+			document.getElementById("p_word" + i).hint123.removeAttribute('hidden');
+		});
+		
+		document.getElementById("p_word" + i).addEventListener("focusout", (e) => {
+			document.getElementById("p_word" + i).hint123.setAttribute('hidden', true);
+		});
 }
 
 // selection manager bc too lazy and bc organization haha

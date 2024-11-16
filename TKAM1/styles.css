@@ -36,6 +36,10 @@ button:active {
     background-color: darkgrey!important;
 }
 
+[hidden] {
+	display: none!important;
+}
+
 /*style="width: 80%; height: 8%; margin:2% 10% 0; background-color: #444444"*/
 
 /*style="background-color:#888888; width: 50%; height: 66%" */
