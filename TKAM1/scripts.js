@@ -61,6 +61,8 @@ while (count < Object.keys(wordList).length) {
     newEle.id = '';
     newEle.removeAttribute('hidden');
 
+    newEle.currentLine123 = undefined;
+
     newEle.querySelector('button').innerText = e;
 
     newEle.querySelector('button').addEventListener("click", (e)=>{
@@ -111,12 +113,13 @@ function lineManager(newEle) {
         return;
     }
     ele1.querySelector('button').style.borderStyle = 'solid';
-    makeLine(
+    if (ele1.currentLine123) {
+        document.body.remove(ele1.currentLine123);
+    }
+    ele1.currentLine123 = makeLine(
         [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
         [newEle.getBoundingClientRect().left, (newEle.getBoundingClientRect().top + newEle.getBoundingClientRect().bottom)/2]
     );
-
-    ele1 = undefined;
 }
 
 // line function
