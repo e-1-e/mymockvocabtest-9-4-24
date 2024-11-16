@@ -28,6 +28,14 @@ html, body {
     margin: auto;
 }
 
+button:hover {
+    background-color: darkgrey;
+}
+
+button:active {
+    background-color: grey;
+}
+
 /*style="width: 80%; height: 8%; margin:2% 10% 0; background-color: #444444"*/
 
 /*style="background-color:#888888; width: 50%; height: 66%" */
