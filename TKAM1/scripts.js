@@ -17,7 +17,20 @@ var wordList = {
     'repertoire' : 'a stock of skills or types of behavior that a person habitually uses',
     'vapid' : 'offering nothing that is stimulating or challenging',
     'malevolent' : 'having or showing a wish to do evil to others'
-} 
+}
+
+var sentenceList = {
+    'The meat they procured managed to (___) their hunger.' : 'assuage',
+    'Ohio is (___) visited by tourists.' : 'seldom',
+    'The evidence would (___) the detectives to arrive at a conclusion.' : 'enable',
+    'The tell-all pieces exposed many (___) about the actor\'s personal life.' : 'revelations',
+    'She was (___) late for work, and was therefore fired.' : 'habitually',
+    'He found (___) in a living a simple life in the country.' : 'contentment',
+    'The garden (___) with wildlife.' : 'teemed',
+    'The musician had a full concert repertoire listed on his resumé.' : 'repertoire',
+    'Many students found Mrs. Crossen\'s English class rather (___) in comparison to their Accelerated Bio Class.' : 'vapid',
+    'The students saw the glint of Mrs. Crossen’s dark, (___) eyes as she passed out the vocabulary sheet.' : 'malevolent'
+}
 
 var wordEntries = [];
 
@@ -72,6 +85,17 @@ while (count < Object.keys(wordList).length) {
     wordEntries.push(newEle);
     count++;
     
+}
+
+let sentencesTaken = [];
+for (let i = 1; i < 6; i++) {
+    let newPos = Math.floor(Math.random() * 10) + 1;
+    while (sentencesTaken.indexOf(newPos) != -1) {
+        newPos = Math.floor(Math.random() * 10) + 1;
+    }
+    sentencesTaken.push(newPos);
+
+    document.getElementById("p_word" + i).placeholder = Object.keys(sentenceList)[newPos];
 }
 
 // selection manager bc too lazy and bc organization haha
