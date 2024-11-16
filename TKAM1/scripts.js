@@ -134,10 +134,13 @@ function lineManager(newEle) {
     if (newEle.connectedTo123) {
         newEle.connectedTo123.connectedTo123 = undefined;
     }
+		
+		console.log('ele1 parent:');
+		console.log(ele1.parentElement.id)
 
     ele1.currentLine123 = newEle.currentLine123 = makeLine(
-        [ele1.getBoundingClientRect().right, (ele1.getBoundingClientRect().top + ele1.getBoundingClientRect().bottom)/2],
-        [newEle.getBoundingClientRect().left, (newEle.getBoundingClientRect().top + newEle.getBoundingClientRect().bottom)/2]
+        [ele1.querySelector('button').getBoundingClientRect()[ele1.parentElement.id == 'm_col1' ? 'right' : 'left'], (ele1.querySelector('button').getBoundingClientRect().top + ele1.querySelector('button').getBoundingClientRect().bottom)/2],
+        [newEle.querySelector('button').getBoundingClientRect()[newEle.parentElement.id == 'm_col1' ? 'right' : 'left'], (newEle.querySelector('button').getBoundingClientRect().top + newEle.querySelector('button').getBoundingClientRect().bottom)/2]
     );
 
     ele1.connectedTo123 = newEle;
@@ -150,6 +153,24 @@ function lineManager(newEle) {
 //      coordinate1: [x, y]
 //      coordinate2: [x, y]
 function makeLine(coordinate1, coordinate2) {
+/* 		let pp = document.createElement('div');
+		pp.style.backgroundColor = 'black';
+		pp.style.height = '10px';
+		pp.style.width = '10px';
+		pp.style.position = 'absolute';
+		pp.style.top = `${coordinate1[1]}px`;
+		pp.style.left = `${coordinate1[0]}px`;
+		document.body.append(pp);
+		
+		pp = document.createElement('div');
+		pp.style.backgroundColor = 'black';
+		pp.style.height = '10px';
+		pp.style.width = '10px';
+		pp.style.position = 'absolute';
+		pp.style.top = `${coordinate2[1]}px`;
+		pp.style.left = `${coordinate2[0]}px`;
+		document.body.append(pp); */
+		
     let nx = document.createElement('div');
     nx.style.backgroundColor = 'black';
     nx.style.height = '5px';
@@ -163,7 +184,13 @@ function makeLine(coordinate1, coordinate2) {
     nx.style.left = `${(coordinate2[0]+coordinate1[0])/2}px`;
     
     document.body.append(nx);
-    nx.style.marginLeft = `-${nx.style.width.substr(0, nx.style.width.length - 3)/2}px`;
+		
+		console.log('nx width');
+		console.log(nx.style.width.substr(0, nx.style.width.length - 2)/2);
+		console.log(nx.style.width.substr(0, nx.style.width.length - 2));
+		console.log(nx.style.width);
+		
+    nx.style.marginLeft = `-${nx.style.width.substr(0, nx.style.width.length - 2)/2}px`;
 
     return nx;
 }
