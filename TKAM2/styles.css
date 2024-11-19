@@ -1,0 +1,45 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.topSquare {
+    width: 50%;
+    height: 68%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 6%;
+}
+
+.sampleEntry {
+    width: 80%;
+    height: 7%;
+    margin: auto;
+}
+
+button:hover {
+    background-color: whitesmoke!important;
+}
+
+button:active {
+    background-color: darkgrey!important;
+}
+
+[hidden] {
+	display: none!important;
+}
+
+/*style="width: 80%; height: 8%; margin:2% 10% 0; background-color: #444444"*/
+
+/*style="background-color:#888888; width: 50%; height: 66%" */
