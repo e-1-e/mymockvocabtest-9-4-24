@@ -278,7 +278,7 @@ function grade() {
             score++;
             document.getElementById("p_word" + ixe).style.backgroundColor = '#c1f7d6';
         } else {
-            document.getElementById("p_word" + ixe).value = `${sentenceList[document.getElementById("p_word" + ixe).placeholder.trim().toLowerCase()]} (${document.getElementById("p_word" + ixe).value})`;
+            document.getElementById("p_word" + ixe).value = `${sentenceList[document.getElementById("p_word" + ixe).placeholder].trim().toLowerCase()} (${document.getElementById("p_word" + ixe).value})`;
         }
     }
 
