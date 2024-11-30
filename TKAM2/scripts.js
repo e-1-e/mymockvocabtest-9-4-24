@@ -26,7 +26,7 @@ var sentenceList = {
     'Silver is (___) too easily.' : 'tarnished',
     'For some (___) reason, they installed a toilet inside the kitchen.' : 'unfathomable',
     'The (___) had a vision and shared the good news to the people of the town.' : 'prophet',
-    'The dog\'s aggressive behavior (___) him nearly impossible to adopt.' : 'render',
+    'The dog\'s aggressive behavior (___) him nearly impossible to adopt.' : 'rendered',
     'The new flavors pleased his (___).' : 'palate',
     'The girl handed a ball of (___) to the artist.' : 'twine',
     'Art\'s main purpose is to supply moral uplift and (___).' : 'edification'
@@ -277,6 +277,8 @@ function grade() {
         if (document.getElementById("p_word" + ixe).value.trim().toLowerCase() == sentenceList[document.getElementById("p_word" + ixe).placeholder].trim().toLowerCase()) {
             score++;
             document.getElementById("p_word" + ixe).style.backgroundColor = '#c1f7d6';
+        } else {
+            document.getElementById("p_word" + ixe).value = `${sentenceList[document.getElementById("p_word" + ixe).placeholder.trim().toLowerCase()]} (${document.getElementById("p_word" + ixe).value})`;
         }
     }
 
