@@ -8,7 +8,7 @@ var wordList = {
     'Sanct' : 'holy',
     'Meta' : 'change',
     'Petr' : 'rock',
-    'Mir' : ' wonder',
+    'Mir' : 'wonder',
     'Man' : 'hand',
     'Rect' : 'right',
     'Volv' : 'roll',
