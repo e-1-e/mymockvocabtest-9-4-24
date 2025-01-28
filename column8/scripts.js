@@ -19,7 +19,7 @@ var wordList = {
     'Ocul' : 'eye',
     'Cur': 'care for',
     'Ultra' : 'beyond',
-    'Old' : 'appearance',
+    'Oid' : 'appearance',
     'Gest' : 'carry',
     'Apt' : 'fit',
     'Tact' : 'touch',
