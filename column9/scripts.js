@@ -1,5 +1,6 @@
-import * as game from "../maingame.mjs";
+//import * as game from "../maingame.mjs";
 
+game = await import('../maingame.mjs');
 /* Place your JavaScript in this file */
 game.wordList = {
     'Path' : 'feeling',
