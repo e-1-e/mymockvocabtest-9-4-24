@@ -1,8 +1,6 @@
 //import * as game from "../maingame.mjs";
 
-var game = await import('../maingame.mjs');
-/* Place your JavaScript in this file */
-var wordList2 = {
+var wordList = {
     'Path' : 'feeling',
     'A' : 'not',
     'Nomy' : 'law',
@@ -30,4 +28,6 @@ var wordList2 = {
     'Topo' : 'place'
 } 
 
-game.m_setup(wordList2);
+var game = await import('../maingame.mjs');
+/* Place your JavaScript in this file */
+game.m_setup(wordList);

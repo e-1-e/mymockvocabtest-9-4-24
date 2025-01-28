@@ -6,8 +6,6 @@ decade = 100
 democracy = king
 */
 
-var game = await import('../maingameAlt1.mjs');
-
 var specialAnswers = {
     'p_word2': false,
     'p_word4': false
@@ -40,5 +38,7 @@ var wordList = {
     'Stell' : 'star',
     'Amat' : 'love'
 } 
+
+var game = await import('../maingameAlt1.mjs');
 
 game.m_setup(wordList, specialAnswers);
