@@ -1,4 +1,4 @@
-import * as game from "../maingame.js";
+import * as game from "../maingame.mjs";
 
 /* Place your JavaScript in this file */
 game.wordList = {
