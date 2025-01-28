@@ -40,13 +40,14 @@ while (count < Object.keys(wordList).length) {
     while (positionsTaken.indexOf(newPosition) != -1) {
         newPosition = Math.ceil(Math.random() * 25) - 1;
     }
-    console.log(newPosition);
-    positionsTaken.push(newPosition);
 
     let searchParams = new URLSearchParams(window.location.search);
     if (searchParams.get('random') == 'false') {
-        positionsTaken = count;
+        newPosition = count;
     }
+
+    console.log(newPosition);
+    positionsTaken.push(newPosition);
 
     let e = Object.keys(wordList)[newPosition]
 
