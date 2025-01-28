@@ -43,6 +43,11 @@ while (count < Object.keys(wordList).length) {
     console.log(newPosition);
     positionsTaken.push(newPosition);
 
+    let searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get('random') == 'false') {
+        positionsTaken = count;
+    }
+
     let e = Object.keys(wordList)[newPosition]
 
     var curCol = document.getElementById((count < 13) ? 'm_col1' : 'm_col2');
