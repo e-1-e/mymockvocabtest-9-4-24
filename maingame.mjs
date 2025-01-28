@@ -1,7 +1,7 @@
 /* Place your JavaScript in this file */
 export var wordList;
 
-export function m_setup(){
+export function m_setup(wordList){
     var wordEntries = [];
 
     //set up HTML
