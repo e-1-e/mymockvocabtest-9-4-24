@@ -1,6 +1,4 @@
 /* Place your JavaScript in this file */
-export var wordList;
-
 export function m_setup(wordList){
     var wordEntries = [];
 
