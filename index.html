@@ -23,30 +23,30 @@
        <br/>
 
        <div style="width: 40%; height: 70%; position: absolute; right: 7.5%; background-color: lightgrey; border: 1px solid black; border-radius: 5px; top: 15%;overflow-y:scroll;" id="testList">
-       <button class="menuBtn" style="top: 0%;" onclick="window.location.href = './column1'">Column 1 (Ante-Un)</button>
-       <button class="menuBtn" style="top: 7%;" onclick="window.location.href = './column2'">Column 2 (Archy-Anthropo)</button>
-       <button class="menuBtn" style="top: 14%;" onclick="window.location.href = './column3'">Column 3 (Homo-Viv)</button>
-       <button class="menuBtn" style="top: 21%;" onclick="window.location.href = './column4'">Column 4 (Morph-Sangui)</button>
-       <button class="menuBtn" style="top: 28%;" onclick="window.location.href = './column5'">Column 5 (Vita-Amat)</button>
-       <button class="menuBtn" style="top: 35%;" onclick="window.location.href = './column6'">Column 6 (Germ-Gamy)</button>
-       <button class="menuBtn" style="top: 42%;" onclick="window.location.href = './column7'">Column 7 (Numer-Il)</button>
-       <button class="menuBtn" style="top: 49%;" onclick="window.location.href = './column8'">Column 8 (Sed-Rid)</button>
-       <button class="menuBtn" style="top: 56%;" onclick="window.location.href = './column9'">Column 9 (Path-Topo)</button>
-       <button class="menuBtn" style="top: 63%;" onclick="window.location.href = './column10'">Column 10 (Ped-Fug)</button>
-       <button class="menuBtn" style="top: 70%;" onclick="window.location.href = './column11'">Column 11 (-i-Andro)</button>
-       <button class="menuBtn" style="top: 77%;" onclick="window.location.href = './column12'">Column 12 (Mel-Cyt)</button>
-       <button class="menuBtn" style="top: 84%;" onclick="window.location.href = './column13'">Column 13 (Chrom-Phyll)</button>
-       <button class="menuBtn" style="top: 91%;" onclick="window.location.href = './column14'">Column 14 (Pleo-Pod)</button>
-       <button class="menuBtn" style="top: 98%;" onclick="window.location.href = './column15'">Column 15 (Tropo-Dicho)</button>
-       <button class="menuBtn" style="top: 105%;" onclick="window.location.href = './column16'">Column 16 (Anglo-Ist)</button>
-       <button class="menuBtn" style="top: 112%;" onclick="window.location.href = './column17'">Column 17 (Atmo-Ideo)</button>
-       <button class="menuBtn" style="top: 119%;" onclick="window.location.href = './column18'">Column 18 (Ven-Ichthy)</button>
-       <button class="menuBtn" style="top: 126%;" onclick="window.location.href = './column19'">Column 19 (Ligu-Via)</button>
-       <button class="menuBtn" style="top: 133%;" onclick="window.location.href = './column20'">Column 20 (Mela-Vice)</button>
-       <button class="menuBtn" style="top: 140%;" onclick="window.location.href = './column21'">Column 21 (Mollify-Discursive)</button>
-       <button class="menuBtn" style="top: 147%;" onclick="window.location.href = './column22'">Column 22 (Advocate-Android)</button>
-       <button class="menuBtn" style="top: 154%;" onclick="window.location.href = './TKAM1'"><i>TKAM 1</i> (Assuage-Malevolent)</button>
-       <button class="menuBtn" style="top: 154%;" onclick="window.location.href = './TKAM2'"><i>TKAM 2</i> (Tacit-Edification)</button>
+       <button class="menuBtn" id="column1" style="top: 0%;" onclick="window.location.href = './column1'">Column 1 (Ante-Un)</button>
+       <button class="menuBtn" id="column2" style="top: 7%;" onclick="window.location.href = './column2'">Column 2 (Archy-Anthropo)</button>
+       <button class="menuBtn" id="column3"  style="top: 14%;" onclick="window.location.href = './column3'">Column 3 (Homo-Viv)</button>
+       <button class="menuBtn" id="column4"  style="top: 21%;" onclick="window.location.href = './column4'">Column 4 (Morph-Sangui)</button>
+       <button class="menuBtn" id="column5"  style="top: 28%;" onclick="window.location.href = './column5'">Column 5 (Vita-Amat)</button>
+       <button class="menuBtn" id="column6"  style="top: 35%;" onclick="window.location.href = './column6'">Column 6 (Germ-Gamy)</button>
+       <button class="menuBtn" id="column7"  style="top: 42%;" onclick="window.location.href = './column7'">Column 7 (Numer-Il)</button>
+       <button class="menuBtn" id="column8"  style="top: 49%;" onclick="window.location.href = './column8'">Column 8 (Sed-Rid)</button>
+       <button class="menuBtn" id="column9"  style="top: 56%;" onclick="window.location.href = './column9'">Column 9 (Path-Topo)</button>
+       <button class="menuBtn" id="column10"  style="top: 63%;" onclick="window.location.href = './column10'">Column 10 (Ped-Fug)</button>
+       <button class="menuBtn" id="column11"  style="top: 70%;" onclick="window.location.href = './column11'">Column 11 (-i-Andro)</button>
+       <button class="menuBtn" id="column12"  style="top: 77%;" onclick="window.location.href = './column12'">Column 12 (Mel-Cyt)</button>
+       <button class="menuBtn" id="column13"  style="top: 84%;" onclick="window.location.href = './column13'">Column 13 (Chrom-Phyll)</button>
+       <button class="menuBtn" id="column14"  style="top: 91%;" onclick="window.location.href = './column14'">Column 14 (Pleo-Pod)</button>
+       <button class="menuBtn" id="column15"  style="top: 98%;" onclick="window.location.href = './column15'">Column 15 (Tropo-Dicho)</button>
+       <button class="menuBtn" id="column16"  style="top: 105%;" onclick="window.location.href = './column16'">Column 16 (Anglo-Ist)</button>
+       <button class="menuBtn" id="column17"  style="top: 112%;" onclick="window.location.href = './column17'">Column 17 (Atmo-Ideo)</button>
+       <button class="menuBtn" id="column18"  style="top: 119%;" onclick="window.location.href = './column18'">Column 18 (Ven-Ichthy)</button>
+       <button class="menuBtn" id="column19"  style="top: 126%;" onclick="window.location.href = './column19'">Column 19 (Ligu-Via)</button>
+       <button class="menuBtn" id="column20"  style="top: 133%;" onclick="window.location.href = './column20'">Column 20 (Mela-Vice)</button>
+       <button class="menuBtn" id="column21"  style="top: 140%;" onclick="window.location.href = './column21'">Column 21 (Mollify-Discursive)</button>
+       <button class="menuBtn" id="column22"  style="top: 147%;" onclick="window.location.href = './column22'">Column 22 (Advocate-Android)</button>
+       <button class="menuBtn" id="TKAM1"  style="top: 154%;" onclick="window.location.href = './TKAM1'"><i>TKAM 1</i> (Assuage-Malevolent)</button>
+       <button class="menuBtn" id="TKAM2"  style="top: 154%;" onclick="window.location.href = './TKAM2'"><i>TKAM 2</i> (Tacit-Edification)</button>
        
        
        </div>
@@ -81,6 +81,10 @@
             &nbsp;&nbsp;- then it gets stripped of all leading and trailing whitespace (so that way if ur phone decides to add a space at the end of every word ur not penalized for that. just dont add spaces in the middle of the word.<br/>
             &nbsp;&nbsp;- next it is compared to the word to the left of its box<br/>
             &nbsp;&nbsp;- u are given a point if they match exactly<br/>
+            <br/>
+            extras: <br/>
+            &nbsp;&nbsp; add ?random=false to the end of the test link to disable randomizing. or click this <button id="easyMode">button</button>!
+
            </p>
        </div>
        
@@ -90,6 +94,16 @@
             element.style.top = `${i * 7}%`;
             i++;
         });
+
+        var easyMode = false;
+        document.getElementById('easyMode').addEventListener("click", () => {
+            easyMode = !easyMode;
+            [...document.getElementById('testList').children].forEach(element => {
+                element.onclick = function(){
+                    window.location.href = `./${element.id}${easyMode ? '?random=false' : ''}`;
+                };
+            });
+        })
        </script>
    </body>
 
