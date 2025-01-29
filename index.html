@@ -83,7 +83,7 @@
             &nbsp;&nbsp;- u are given a point if they match exactly<br/>
             <br/>
             extras: <br/>
-            &nbsp;&nbsp; add ?random=false to the end of the test link to disable randomizing. or click this <button id="easyMode">button</button>!
+            &nbsp;&nbsp; add ?random=false to the end of the test link to disable randomizing. or click this <button style="background-color: white" id="easyMode">button</button>!
 
            </p>
        </div>
@@ -98,6 +98,8 @@
         var easyMode = false;
         document.getElementById('easyMode').addEventListener("click", () => {
             easyMode = !easyMode;
+            document.getElementById('easyMode').style.backgroundColor = easyMode ? 'grey' : 'white';
+            document.getElementById('easyMode').style.color = easyMode ? 'white' : 'black';
             [...document.getElementById('testList').children].forEach(element => {
                 element.onclick = function(){
                     window.location.href = `./${element.id}${easyMode ? '?random=false' : ''}`;
